@@ -100,3 +100,113 @@
     transform: rotate(360deg);
   }
 }
+
+/* Анимации для 3D робота */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.robot-container {
+  animation: fadeInScale 1s ease-out;
+}
+
+.robot-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.robot-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.2), transparent 70%);
+  animation: pulse-glow 4s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  animation: orbit 20s linear infinite;
+  opacity: 0.6;
+}
+
+.particle:nth-child(2) {
+  animation-delay: -5s;
+  animation-duration: 15s;
+}
+
+.particle:nth-child(3) {
+  animation-delay: -10s;
+  animation-duration: 25s;
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
