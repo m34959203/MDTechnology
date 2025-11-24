@@ -26,55 +26,57 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
         <div className="container mx-auto px-4 z-10">
-          <Card className="w-full min-h-[600px] bg-black/[0.96] relative overflow-hidden border-slate-800">
-            <SpotlightAceternity
-              className="-top-40 left-0 md:left-60 md:-top-20"
-              fill="white"
-            />
-
-            <div className="flex flex-col md:flex-row h-full">
-              {/* Left content */}
-              <div className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center">
-                <div className="mb-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 w-fit">
-                  <Sparkles className="w-4 h-4 text-blue-400" />
-                  <span className="text-sm text-blue-300">Технологии будущего уже здесь</span>
-                </div>
-
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
-                  AI-решения для<br />вашего бизнеса
-                </h1>
-
-                <p className="text-lg md:text-xl text-neutral-300 max-w-lg mb-8">
-                  Превратите свой бизнес в технологического лидера с помощью искусственного интеллекта.
-                  Автоматизация, которая работает 24/7.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#contact"
-                    className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    Получить консультацию
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <a
-                    href="#services"
-                    className="px-8 py-4 border border-slate-700 rounded-lg font-semibold text-white hover:bg-slate-800 transition-all duration-300 text-center"
-                  >
-                    Наши услуги
-                  </a>
-                </div>
-              </div>
-
-              {/* Right content - 3D Scene */}
-              <div className="flex-1 relative min-h-[400px] md:min-h-0">
-                <SplineScene
-                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                  className="w-full h-full"
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Left content */}
+            <div className="flex-1 relative z-10">
+              <Card className="bg-black/[0.96] relative overflow-hidden border-slate-800 p-8 md:p-12">
+                <SpotlightAceternity
+                  className="-top-40 left-0 md:left-60 md:-top-20"
+                  fill="white"
                 />
-              </div>
+
+                <div className="relative z-10">
+                  <div className="mb-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 w-fit">
+                    <Sparkles className="w-4 h-4 text-blue-400" />
+                    <span className="text-sm text-blue-300">Технологии будущего уже здесь</span>
+                  </div>
+
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
+                    AI-решения для<br />вашего бизнеса
+                  </h1>
+
+                  <p className="text-lg md:text-xl text-neutral-300 max-w-lg mb-8">
+                    Превратите свой бизнес в технологического лидера с помощью искусственного интеллекта.
+                    Автоматизация, которая работает 24/7.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="#contact"
+                      className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      Получить консультацию
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                    <a
+                      href="#services"
+                      className="px-8 py-4 border border-slate-700 rounded-lg font-semibold text-white hover:bg-slate-800 transition-all duration-300 text-center"
+                    >
+                      Наши услуги
+                    </a>
+                  </div>
+                </div>
+              </Card>
             </div>
-          </Card>
+
+            {/* Right content - 3D Scene */}
+            <div className="flex-1 relative min-h-[500px] md:min-h-[700px] w-full">
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
