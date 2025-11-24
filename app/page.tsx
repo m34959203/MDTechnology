@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react';
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { SpotlightAceternity } from "@/components/ui/spotlight-aceternity";
@@ -14,10 +15,23 @@ import {
   CheckCircle2,
   Phone,
   Mail,
-  ArrowRight
+  ArrowRight,
+  X
 } from 'lucide-react';
 
 export default function Home() {
+  const [openService, setOpenService] = useState<string | null>(null);
+
+  const scrollToService = (serviceId: string) => {
+    setOpenService(serviceId);
+    setTimeout(() => {
+      document.getElementById(serviceId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
+  const closeService = () => {
+    setOpenService(null);
+  };
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Header */}
@@ -188,9 +202,12 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a href="#service-websites" className="inline-flex items-center text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
+                <button
+                  onClick={() => scrollToService('service-websites')}
+                  className="inline-flex items-center text-blue-400 font-semibold hover:gap-3 gap-2 transition-all cursor-pointer hover:text-blue-300"
+                >
                   Подробнее <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </Card>
 
@@ -218,9 +235,12 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a href="#service-chatbots" className="inline-flex items-center text-purple-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
+                <button
+                  onClick={() => scrollToService('service-chatbots')}
+                  className="inline-flex items-center text-purple-400 font-semibold hover:gap-3 gap-2 transition-all cursor-pointer hover:text-purple-300"
+                >
                   Подробнее <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </Card>
 
@@ -269,9 +289,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="#service-agents" className="mt-6 inline-flex items-center text-pink-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
+                <button
+                  onClick={() => scrollToService('service-agents')}
+                  className="mt-6 inline-flex items-center text-pink-400 font-semibold hover:gap-3 gap-2 transition-all cursor-pointer hover:text-pink-300"
+                >
                   Узнать больше <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </Card>
           </div>
@@ -279,19 +302,28 @@ export default function Home() {
       </section>
 
       {/* Service Details - AI Websites */}
-      <section id="service-websites" className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <Card className="relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-slate-900 border-blue-500/30">
-            <div className="p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-blue-600/20 rounded-xl">
-                  <Globe className="w-10 h-10 text-blue-400" />
+      {openService === 'service-websites' && (
+        <section id="service-websites" className="py-20 px-4 relative">
+          <div className="container mx-auto max-w-6xl">
+            <Card className="relative overflow-hidden bg-slate-900/98 backdrop-blur-xl border-blue-500/50 shadow-2xl">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 bg-blue-600/30 rounded-xl">
+                      <Globe className="w-10 h-10 text-blue-400" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">AI-сайты нового поколения</h2>
+                      <p className="text-blue-300">Интеллектуальные веб-платформы с искусственным интеллектом</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={closeService}
+                    className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                  >
+                    <X className="w-6 h-6 text-slate-400 hover:text-white" />
+                  </button>
                 </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">AI-сайты нового поколения</h2>
-                  <p className="text-blue-300">Интеллектуальные веб-платформы с искусственным интеллектом</p>
-                </div>
-              </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -307,7 +339,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="bg-slate-800/50 p-6 rounded-lg border border-blue-500/20">
+                <div className="bg-slate-800/90 p-6 rounded-lg border border-blue-500/30 shadow-lg">
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-yellow-400" />
                     Ключевые преимущества
@@ -332,8 +364,8 @@ export default function Home() {
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-6">Основные функции</h3>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
-                    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="bg-slate-800/70 p-6 rounded-lg border border-slate-600 shadow-md">
+                    <div className="w-12 h-12 bg-blue-600/30 rounded-lg flex items-center justify-center mb-4">
                       <Zap className="w-6 h-6 text-blue-400" />
                     </div>
                     <h4 className="text-lg font-bold text-white mb-2">Умные формы</h4>
@@ -343,8 +375,8 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
-                    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="bg-slate-800/70 p-6 rounded-lg border border-slate-600 shadow-md">
+                    <div className="w-12 h-12 bg-blue-600/30 rounded-lg flex items-center justify-center mb-4">
                       <TrendingUp className="w-6 h-6 text-blue-400" />
                     </div>
                     <h4 className="text-lg font-bold text-white mb-2">Динамический контент</h4>
@@ -354,8 +386,8 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
-                    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="bg-slate-800/70 p-6 rounded-lg border border-slate-600 shadow-md">
+                    <div className="w-12 h-12 bg-blue-600/30 rounded-lg flex items-center justify-center mb-4">
                       <Bot className="w-6 h-6 text-blue-400" />
                     </div>
                     <h4 className="text-lg font-bold text-white mb-2">AI-рекомендации</h4>
@@ -400,21 +432,31 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      )}
 
       {/* Service Details - Chatbots */}
-      <section id="service-chatbots" className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <Card className="relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-slate-900 border-purple-500/30">
-            <div className="p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-purple-600/20 rounded-xl">
-                  <MessageSquare className="w-10 h-10 text-purple-400" />
+      {openService === 'service-chatbots' && (
+        <section id="service-chatbots" className="py-20 px-4 relative">
+          <div className="container mx-auto max-w-6xl">
+            <Card className="relative overflow-hidden bg-slate-900/98 backdrop-blur-xl border-purple-500/50 shadow-2xl">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 bg-purple-600/30 rounded-xl">
+                      <MessageSquare className="w-10 h-10 text-purple-400" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Умные чат-боты</h2>
+                      <p className="text-purple-300">AI-ассистенты для автоматизации общения с клиентами</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={closeService}
+                    className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                  >
+                    <X className="w-6 h-6 text-slate-400 hover:text-white" />
+                  </button>
                 </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Умные чат-боты</h2>
-                  <p className="text-purple-300">AI-ассистенты для автоматизации общения с клиентами</p>
-                </div>
-              </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -430,7 +472,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="bg-slate-800/50 p-6 rounded-lg border border-purple-500/20">
+                <div className="bg-slate-800/90 p-6 rounded-lg border border-purple-500/30 shadow-lg">
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-yellow-400" />
                     Ключевые преимущества
@@ -469,7 +511,7 @@ export default function Home() {
                         { name: "Instagram Direct", desc: "Автоответы в социальных сетях" },
                         { name: "Email", desc: "Автоматическая обработка писем" }
                       ].map((channel, idx) => (
-                        <div key={idx} className="bg-slate-800/30 p-4 rounded-lg border border-slate-700">
+                        <div key={idx} className="bg-slate-800/70 p-4 rounded-lg border border-slate-600 shadow-md">
                           <p className="text-white font-semibold">{channel.name}</p>
                           <p className="text-slate-400 text-sm mt-1">{channel.desc}</p>
                         </div>
@@ -490,7 +532,7 @@ export default function Home() {
                         { name: "Техподдержка", desc: "Решение типовых проблем без человека" },
                         { name: "Опросы и фидбек", desc: "Сбор отзывов и анализ удовлетворенности" }
                       ].map((feature, idx) => (
-                        <div key={idx} className="bg-slate-800/30 p-4 rounded-lg border border-slate-700">
+                        <div key={idx} className="bg-slate-800/70 p-4 rounded-lg border border-slate-600 shadow-md">
                           <p className="text-white font-semibold">{feature.name}</p>
                           <p className="text-slate-400 text-sm mt-1">{feature.desc}</p>
                         </div>
@@ -500,7 +542,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 p-6 rounded-lg border border-purple-500/20 mb-8">
+              <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 bg-slate-800/70 p-6 rounded-lg border border-purple-500/40 shadow-lg mb-8">
                 <h3 className="text-xl font-bold text-white mb-4">Интеграция с вашими системами</h3>
                 <div className="grid md:grid-cols-4 gap-4">
                   {[
@@ -509,7 +551,7 @@ export default function Home() {
                     "API и webhooks",
                     "1С и учетные системы"
                   ].map((integration, idx) => (
-                    <div key={idx} className="bg-slate-800/50 p-4 rounded-lg text-center border border-slate-700">
+                    <div key={idx} className="bg-slate-800/80 p-4 rounded-lg text-center border border-slate-600 shadow-md">
                       <CheckCircle2 className="w-8 h-8 text-green-400 mx-auto mb-2" />
                       <p className="text-white text-sm font-semibold">{integration}</p>
                     </div>
@@ -517,7 +559,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-slate-800/30 p-6 rounded-lg border border-purple-500/20">
+              <div className="bg-slate-800/80 p-6 rounded-lg border border-purple-500/30 shadow-lg">
                 <h3 className="text-xl font-bold text-white mb-4">Примеры использования</h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[
@@ -528,7 +570,7 @@ export default function Home() {
                     { title: "Финансы", desc: "Консультации по продуктам, заявки на кредиты, поддержка" },
                     { title: "HR и рекрутинг", desc: "Первичный скрининг кандидатов, FAQ для сотрудников" }
                   ].map((example, idx) => (
-                    <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                    <div key={idx} className="p-4 bg-slate-800/80 rounded-lg border border-slate-600 shadow-md">
                       <h4 className="text-purple-300 font-bold mb-2">{example.title}</h4>
                       <p className="text-slate-400 text-sm">{example.desc}</p>
                     </div>
@@ -549,21 +591,31 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      )}
 
       {/* Service Details - AI Agents */}
-      <section id="service-agents" className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <Card className="relative overflow-hidden bg-gradient-to-br from-pink-900/20 to-slate-900 border-pink-500/30">
-            <div className="p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-pink-600/20 rounded-xl">
-                  <Bot className="w-10 h-10 text-pink-400" />
+      {openService === 'service-agents' && (
+        <section id="service-agents" className="py-20 px-4 relative">
+          <div className="container mx-auto max-w-6xl">
+            <Card className="relative overflow-hidden bg-slate-900/98 backdrop-blur-xl border-pink-500/50 shadow-2xl">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 bg-pink-600/30 rounded-xl">
+                      <Bot className="w-10 h-10 text-pink-400" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">AI-бизнес агенты</h2>
+                      <p className="text-pink-300">Автономные AI-системы для комплексной автоматизации бизнеса</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={closeService}
+                    className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                  >
+                    <X className="w-6 h-6 text-slate-400 hover:text-white" />
+                  </button>
                 </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">AI-бизнес агенты</h2>
-                  <p className="text-pink-300">Автономные AI-системы для комплексной автоматизации бизнеса</p>
-                </div>
-              </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -580,7 +632,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="bg-slate-800/50 p-6 rounded-lg border border-pink-500/20">
+                <div className="bg-slate-800/90 p-6 rounded-lg border border-pink-500/30 shadow-lg">
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-yellow-400" />
                     Ключевые преимущества
@@ -606,7 +658,7 @@ export default function Home() {
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-6">Типы AI-агентов</h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-br from-pink-600/10 to-purple-600/10 p-6 rounded-lg border border-pink-500/20">
+                  <div className="bg-gradient-to-br from-pink-600/20 to-purple-600/20 bg-slate-800/70 p-6 rounded-lg border border-pink-500/40 shadow-lg">
                     <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                       <TrendingUp className="w-6 h-6 text-pink-400" />
                       Аналитические агенты
@@ -625,7 +677,7 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-600/10 to-blue-600/10 p-6 rounded-lg border border-purple-500/20">
+                  <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 bg-slate-800/70 p-6 rounded-lg border border-purple-500/40 shadow-lg">
                     <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                       <Zap className="w-6 h-6 text-purple-400" />
                       Операционные агенты
@@ -644,7 +696,7 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-600/10 to-green-600/10 p-6 rounded-lg border border-blue-500/20">
+                  <div className="bg-gradient-to-br from-blue-600/20 to-green-600/20 bg-slate-800/70 p-6 rounded-lg border border-blue-500/40 shadow-lg">
                     <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                       <MessageSquare className="w-6 h-6 text-blue-400" />
                       Маркетинговые агенты
@@ -663,7 +715,7 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-green-600/10 to-pink-600/10 p-6 rounded-lg border border-green-500/20">
+                  <div className="bg-gradient-to-br from-green-600/20 to-pink-600/20 bg-slate-800/70 p-6 rounded-lg border border-green-500/40 shadow-lg">
                     <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                       <Bot className="w-6 h-6 text-green-400" />
                       Продажные агенты
@@ -684,7 +736,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-pink-600/10 to-purple-600/10 p-6 rounded-lg border border-pink-500/20 mb-8">
+              <div className="bg-gradient-to-r from-pink-600/20 to-purple-600/20 bg-slate-800/70 p-6 rounded-lg border border-pink-500/40 shadow-lg mb-8">
                 <h3 className="text-xl font-bold text-white mb-4">Процесс внедрения AI-агента</h3>
                 <div className="grid md:grid-cols-5 gap-4">
                   {[
@@ -705,7 +757,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-slate-800/30 p-6 rounded-lg border border-pink-500/20 mb-8">
+              <div className="bg-slate-800/80 p-6 rounded-lg border border-pink-500/30 shadow-lg mb-8">
                 <h3 className="text-xl font-bold text-white mb-4">Кейсы и результаты</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
@@ -725,7 +777,7 @@ export default function Home() {
                       result: "Экономия 30 часов в неделю, время на создание отчета сокращено с 8 часов до 20 минут"
                     }
                   ].map((caseItem, idx) => (
-                    <div key={idx} className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
+                    <div key={idx} className="bg-slate-800/80 p-5 rounded-lg border border-slate-600 shadow-md">
                       <div className="inline-block px-3 py-1 bg-pink-600/20 rounded-full text-pink-300 text-xs font-semibold mb-3">
                         {caseItem.industry}
                       </div>
@@ -745,7 +797,7 @@ export default function Home() {
                     { tech: "Python & Node.js", desc: "Быстрая разработка" },
                     { tech: "Docker & K8s", desc: "Масштабируемость" }
                   ].map((tech, idx) => (
-                    <div key={idx} className="bg-slate-800/50 p-4 rounded-lg text-center border border-slate-700">
+                    <div key={idx} className="bg-slate-800/80 p-4 rounded-lg text-center border border-slate-600 shadow-md">
                       <p className="text-white font-semibold mb-1">{tech.tech}</p>
                       <p className="text-slate-400 text-xs">{tech.desc}</p>
                     </div>
@@ -766,6 +818,7 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      )}
 
       {/* Social Proof */}
       <section className="py-20 px-4 relative">
