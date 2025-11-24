@@ -62,11 +62,17 @@ export default function Home() {
                   <span className="text-sm text-blue-300">Технологии будущего уже здесь</span>
                 </div>
 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
-                  AI-решения для<br />вашего бизнеса
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                    MDTechnology
+                  </span>
+                  <br />
+                  <span className="text-white">
+                    AI-решения для вашего бизнеса
+                  </span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-neutral-300 max-w-lg mb-8">
+                <p className="text-lg md:text-xl text-slate-200 max-w-lg mb-8 leading-relaxed">
                   Превратите свой бизнес в технологического лидера с помощью искусственного интеллекта.
                   Автоматизация, которая работает 24/7.
                 </p>
@@ -182,9 +188,9 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <div className="inline-flex items-center text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
+                <a href="#service-websites" className="inline-flex items-center text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
                   Подробнее <ArrowRight className="w-4 h-4" />
-                </div>
+                </a>
               </div>
             </Card>
 
@@ -212,9 +218,9 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <div className="inline-flex items-center text-purple-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
+                <a href="#service-chatbots" className="inline-flex items-center text-purple-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
                   Подробнее <ArrowRight className="w-4 h-4" />
-                </div>
+                </a>
               </div>
             </Card>
 
@@ -263,12 +269,501 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="mt-6 inline-flex items-center text-pink-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
+                <a href="#service-agents" className="mt-6 inline-flex items-center text-pink-400 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
                   Узнать больше <ArrowRight className="w-4 h-4" />
-                </div>
+                </a>
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Service Details - AI Websites */}
+      <section id="service-websites" className="py-20 px-4 relative">
+        <div className="container mx-auto max-w-6xl">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-slate-900 border-blue-500/30">
+            <div className="p-8 md:p-12">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-blue-600/20 rounded-xl">
+                  <Globe className="w-10 h-10 text-blue-400" />
+                </div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">AI-сайты нового поколения</h2>
+                  <p className="text-blue-300">Интеллектуальные веб-платформы с искусственным интеллектом</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Что это такое?</h3>
+                  <p className="text-slate-300 mb-4 leading-relaxed">
+                    AI-сайт — это не просто красивая веб-страница. Это умная платформа, которая анализирует
+                    поведение каждого посетителя в режиме реального времени и адаптирует контент под его интересы,
+                    увеличивая конверсию в 2-3 раза.
+                  </p>
+                  <p className="text-slate-300 leading-relaxed">
+                    Наши AI-сайты используют машинное обучение для предсказания намерений пользователя,
+                    автоматически оптимизируют воронку продаж и работают как виртуальный продавец 24/7.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 p-6 rounded-lg border border-blue-500/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-yellow-400" />
+                    Ключевые преимущества
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Конверсия выше на 150-300% по сравнению с обычными сайтами",
+                      "Персонализация для каждого посетителя автоматически",
+                      "Снижение стоимости привлечения клиента до 70%",
+                      "Автоматическое A/B тестирование без участия маркетолога",
+                      "Интеграция с CRM, аналитикой и рекламными системами"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-slate-200">
+                        <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Основные функции</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                      <Zap className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">Умные формы</h4>
+                    <p className="text-slate-300 text-sm">
+                      Формы предсказывают, что пользователь хочет ввести, автоматически заполняют поля
+                      и задают релевантные вопросы на основе предыдущих ответов.
+                    </p>
+                  </div>
+
+                  <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                      <TrendingUp className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">Динамический контент</h4>
+                    <p className="text-slate-300 text-sm">
+                      Заголовки, изображения и предложения меняются для каждого посетителя на основе
+                      его источника трафика, устройства и поведения на сайте.
+                    </p>
+                  </div>
+
+                  <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                      <Bot className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">AI-рекомендации</h4>
+                    <p className="text-slate-300 text-sm">
+                      Система анализирует интересы посетителя и показывает наиболее релевантные
+                      товары, услуги или контент, увеличивая средний чек.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 p-6 rounded-lg border border-blue-500/20">
+                <h3 className="text-xl font-bold text-white mb-4">Этапы разработки</h3>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {[
+                    { step: "1", title: "Аудит и стратегия", time: "2-3 дня" },
+                    { step: "2", title: "Дизайн и прототип", time: "5-7 дней" },
+                    { step: "3", title: "Разработка и AI-интеграция", time: "2-3 недели" },
+                    { step: "4", title: "Тестирование и запуск", time: "3-5 дней" }
+                  ].map((phase, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-2">
+                        {phase.step}
+                      </div>
+                      <h4 className="text-white font-semibold mb-1">{phase.title}</h4>
+                      <p className="text-blue-300 text-sm">{phase.time}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                >
+                  Заказать AI-сайт
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Details - Chatbots */}
+      <section id="service-chatbots" className="py-20 px-4 relative">
+        <div className="container mx-auto max-w-6xl">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-slate-900 border-purple-500/30">
+            <div className="p-8 md:p-12">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-purple-600/20 rounded-xl">
+                  <MessageSquare className="w-10 h-10 text-purple-400" />
+                </div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Умные чат-боты</h2>
+                  <p className="text-purple-300">AI-ассистенты для автоматизации общения с клиентами</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Что это такое?</h3>
+                  <p className="text-slate-300 mb-4 leading-relaxed">
+                    Умный чат-бот на базе GPT-4 и собственных AI-моделей — это виртуальный сотрудник,
+                    который может одновременно общаться с тысячами клиентов, отвечать на сложные вопросы,
+                    консультировать и даже закрывать сделки.
+                  </p>
+                  <p className="text-slate-300 leading-relaxed">
+                    В отличие от простых ботов с кнопками, наши AI-ассистенты понимают естественный язык,
+                    контекст разговора и могут самостоятельно решать нестандартные задачи.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 p-6 rounded-lg border border-purple-500/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-yellow-400" />
+                    Ключевые преимущества
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Обработка 1000+ диалогов одновременно без потери качества",
+                      "Работа 24/7 без выходных и перерывов",
+                      "Снижение нагрузки на поддержку до 80%",
+                      "Мгновенные ответы на вопросы клиентов",
+                      "Обучение на базе знаний вашей компании",
+                      "Поддержка 100+ языков для международного бизнеса"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-slate-200">
+                        <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Возможности и интеграции</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                      <MessageSquare className="w-5 h-5 text-purple-400" />
+                      Каналы коммуникации
+                    </h4>
+                    <div className="space-y-3">
+                      {[
+                        { name: "WhatsApp Business", desc: "Самый популярный мессенджер для бизнеса" },
+                        { name: "Telegram", desc: "Быстрая интеграция и богатый функционал" },
+                        { name: "Веб-чат на сайте", desc: "Встраивается на любой сайт за 5 минут" },
+                        { name: "Instagram Direct", desc: "Автоответы в социальных сетях" },
+                        { name: "Email", desc: "Автоматическая обработка писем" }
+                      ].map((channel, idx) => (
+                        <div key={idx} className="bg-slate-800/30 p-4 rounded-lg border border-slate-700">
+                          <p className="text-white font-semibold">{channel.name}</p>
+                          <p className="text-slate-400 text-sm mt-1">{channel.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-purple-400" />
+                      Умные функции
+                    </h4>
+                    <div className="space-y-3">
+                      {[
+                        { name: "Квалификация лидов", desc: "Автоматически определяет горячих клиентов" },
+                        { name: "Запись на встречи", desc: "Интеграция с календарем и бронирование" },
+                        { name: "Обработка заказов", desc: "Прием заказов и оплата через бота" },
+                        { name: "Техподдержка", desc: "Решение типовых проблем без человека" },
+                        { name: "Опросы и фидбек", desc: "Сбор отзывов и анализ удовлетворенности" }
+                      ].map((feature, idx) => (
+                        <div key={idx} className="bg-slate-800/30 p-4 rounded-lg border border-slate-700">
+                          <p className="text-white font-semibold">{feature.name}</p>
+                          <p className="text-slate-400 text-sm mt-1">{feature.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 p-6 rounded-lg border border-purple-500/20 mb-8">
+                <h3 className="text-xl font-bold text-white mb-4">Интеграция с вашими системами</h3>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {[
+                    "CRM (AmoCRM, Bitrix24, HubSpot)",
+                    "Базы данных (PostgreSQL, MongoDB)",
+                    "API и webhooks",
+                    "1С и учетные системы"
+                  ].map((integration, idx) => (
+                    <div key={idx} className="bg-slate-800/50 p-4 rounded-lg text-center border border-slate-700">
+                      <CheckCircle2 className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                      <p className="text-white text-sm font-semibold">{integration}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-slate-800/30 p-6 rounded-lg border border-purple-500/20">
+                <h3 className="text-xl font-bold text-white mb-4">Примеры использования</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {[
+                    { title: "E-commerce", desc: "Консультация по товарам, обработка заказов, отслеживание доставки" },
+                    { title: "Медицина", desc: "Запись к врачам, напоминания о приеме, консультации" },
+                    { title: "Образование", desc: "Ответы на вопросы студентов, расписание, регистрация на курсы" },
+                    { title: "Недвижимость", desc: "Подбор объектов, запись на просмотры, квалификация клиентов" },
+                    { title: "Финансы", desc: "Консультации по продуктам, заявки на кредиты, поддержка" },
+                    { title: "HR и рекрутинг", desc: "Первичный скрининг кандидатов, FAQ для сотрудников" }
+                  ].map((example, idx) => (
+                    <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                      <h4 className="text-purple-300 font-bold mb-2">{example.title}</h4>
+                      <p className="text-slate-400 text-sm">{example.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold text-white hover:from-purple-700 hover:to-pink-700 transition-all duration-300"
+                >
+                  Создать чат-бота
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Details - AI Agents */}
+      <section id="service-agents" className="py-20 px-4 relative">
+        <div className="container mx-auto max-w-6xl">
+          <Card className="relative overflow-hidden bg-gradient-to-br from-pink-900/20 to-slate-900 border-pink-500/30">
+            <div className="p-8 md:p-12">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-pink-600/20 rounded-xl">
+                  <Bot className="w-10 h-10 text-pink-400" />
+                </div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">AI-бизнес агенты</h2>
+                  <p className="text-pink-300">Автономные AI-системы для комплексной автоматизации бизнеса</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Что это такое?</h3>
+                  <p className="text-slate-300 mb-4 leading-relaxed">
+                    AI-бизнес агент — это следующий уровень автоматизации. Это не просто программа,
+                    а автономная система, которая может принимать решения, выполнять сложные многоэтапные
+                    задачи и взаимодействовать с другими системами без участия человека.
+                  </p>
+                  <p className="text-slate-300 leading-relaxed">
+                    Представьте виртуального сотрудника, который может анализировать рынок, генерировать
+                    отчеты, управлять рассылками, обрабатывать документы и выполнять другие рутинные
+                    задачи, освобождая ваше время для стратегических решений.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 p-6 rounded-lg border border-pink-500/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-yellow-400" />
+                    Ключевые преимущества
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Экономия 20-40 часов работы в неделю на рутинных задачах",
+                      "Автономная работа без постоянного контроля",
+                      "Обработка больших объемов данных за минуты",
+                      "Принятие решений на основе анализа данных",
+                      "Масштабирование без найма дополнительных сотрудников",
+                      "Работа 24/7 без выходных и больничных"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-slate-200">
+                        <CheckCircle2 className="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Типы AI-агентов</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-gradient-to-br from-pink-600/10 to-purple-600/10 p-6 rounded-lg border border-pink-500/20">
+                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                      <TrendingUp className="w-6 h-6 text-pink-400" />
+                      Аналитические агенты
+                    </h4>
+                    <ul className="space-y-3">
+                      {[
+                        { name: "Анализ конкурентов", desc: "Мониторинг цен, акций, новых продуктов конкурентов" },
+                        { name: "Рыночные исследования", desc: "Сбор данных о трендах, спросе, аудитории" },
+                        { name: "Финансовая аналитика", desc: "Анализ расходов, прогноз доходов, оптимизация бюджета" },
+                        { name: "Анализ социальных сетей", desc: "Мониторинг упоминаний бренда, настроений клиентов" }
+                      ].map((item, idx) => (
+                        <li key={idx} className="text-slate-300">
+                          <span className="text-pink-300 font-semibold">{item.name}:</span> {item.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-purple-600/10 to-blue-600/10 p-6 rounded-lg border border-purple-500/20">
+                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                      <Zap className="w-6 h-6 text-purple-400" />
+                      Операционные агенты
+                    </h4>
+                    <ul className="space-y-3">
+                      {[
+                        { name: "Email-менеджер", desc: "Сортировка писем, автоответы, создание рассылок" },
+                        { name: "Документооборот", desc: "Обработка договоров, счетов, актов, выставление документов" },
+                        { name: "Планирование встреч", desc: "Координация расписаний, отправка напоминаний" },
+                        { name: "Управление задачами", desc: "Распределение задач, контроль дедлайнов, отчеты" }
+                      ].map((item, idx) => (
+                        <li key={idx} className="text-slate-300">
+                          <span className="text-purple-300 font-semibold">{item.name}:</span> {item.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-blue-600/10 to-green-600/10 p-6 rounded-lg border border-blue-500/20">
+                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                      <MessageSquare className="w-6 h-6 text-blue-400" />
+                      Маркетинговые агенты
+                    </h4>
+                    <ul className="space-y-3">
+                      {[
+                        { name: "Контент-генерация", desc: "Создание постов, статей, описаний товаров" },
+                        { name: "SEO-оптимизация", desc: "Подбор ключевых слов, оптимизация текстов" },
+                        { name: "Управление рекламой", desc: "Настройка кампаний, анализ эффективности, оптимизация" },
+                        { name: "Персонализация", desc: "Создание индивидуальных предложений для клиентов" }
+                      ].map((item, idx) => (
+                        <li key={idx} className="text-slate-300">
+                          <span className="text-blue-300 font-semibold">{item.name}:</span> {item.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-green-600/10 to-pink-600/10 p-6 rounded-lg border border-green-500/20">
+                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                      <Bot className="w-6 h-6 text-green-400" />
+                      Продажные агенты
+                    </h4>
+                    <ul className="space-y-3">
+                      {[
+                        { name: "Лидогенерация", desc: "Поиск потенциальных клиентов, первичный контакт" },
+                        { name: "Квалификация", desc: "Оценка качества лидов, приоритизация" },
+                        { name: "Follow-up", desc: "Автоматические напоминания и повторные касания" },
+                        { name: "Кросс-продажи", desc: "Рекомендации дополнительных товаров и услуг" }
+                      ].map((item, idx) => (
+                        <li key={idx} className="text-slate-300">
+                          <span className="text-green-300 font-semibold">{item.name}:</span> {item.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-pink-600/10 to-purple-600/10 p-6 rounded-lg border border-pink-500/20 mb-8">
+                <h3 className="text-xl font-bold text-white mb-4">Процесс внедрения AI-агента</h3>
+                <div className="grid md:grid-cols-5 gap-4">
+                  {[
+                    { step: "1", title: "Анализ процессов", desc: "Определяем задачи для автоматизации" },
+                    { step: "2", title: "Проектирование", desc: "Создаем архитектуру агента" },
+                    { step: "3", title: "Обучение", desc: "Тренируем на ваших данных" },
+                    { step: "4", title: "Интеграция", desc: "Подключаем к системам" },
+                    { step: "5", title: "Запуск и оптимизация", desc: "Мониторинг и улучшение" }
+                  ].map((phase, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-2">
+                        {phase.step}
+                      </div>
+                      <h4 className="text-white font-semibold mb-1 text-sm">{phase.title}</h4>
+                      <p className="text-pink-300 text-xs">{phase.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-slate-800/30 p-6 rounded-lg border border-pink-500/20 mb-8">
+                <h3 className="text-xl font-bold text-white mb-4">Кейсы и результаты</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[
+                    {
+                      industry: "E-commerce",
+                      task: "Автоматизация обработки заказов и поддержки",
+                      result: "Снижение времени обработки с 24 часов до 5 минут, рост удовлетворенности клиентов на 45%"
+                    },
+                    {
+                      industry: "B2B-компания",
+                      task: "Автоматизация лидогенерации и квалификации",
+                      result: "Увеличение количества квалифицированных лидов в 3 раза при сокращении расходов на 60%"
+                    },
+                    {
+                      industry: "Консалтинг",
+                      task: "Автоматизация создания отчетов и презентаций",
+                      result: "Экономия 30 часов в неделю, время на создание отчета сокращено с 8 часов до 20 минут"
+                    }
+                  ].map((caseItem, idx) => (
+                    <div key={idx} className="bg-slate-800/50 p-5 rounded-lg border border-slate-700">
+                      <div className="inline-block px-3 py-1 bg-pink-600/20 rounded-full text-pink-300 text-xs font-semibold mb-3">
+                        {caseItem.industry}
+                      </div>
+                      <h4 className="text-white font-semibold mb-2 text-sm">{caseItem.task}</h4>
+                      <p className="text-slate-400 text-xs leading-relaxed">{caseItem.result}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 p-6 rounded-lg border border-blue-500/20">
+                <h3 className="text-xl font-bold text-white mb-4">Технологический стек</h3>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {[
+                    { tech: "GPT-4 & Claude", desc: "Передовые языковые модели" },
+                    { tech: "LangChain", desc: "Фреймворк для AI-агентов" },
+                    { tech: "Python & Node.js", desc: "Быстрая разработка" },
+                    { tech: "Docker & K8s", desc: "Масштабируемость" }
+                  ].map((tech, idx) => (
+                    <div key={idx} className="bg-slate-800/50 p-4 rounded-lg text-center border border-slate-700">
+                      <p className="text-white font-semibold mb-1">{tech.tech}</p>
+                      <p className="text-slate-400 text-xs">{tech.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg font-semibold text-white hover:from-pink-700 hover:to-purple-700 transition-all duration-300"
+                >
+                  Внедрить AI-агента
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
