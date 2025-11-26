@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDTechnology.ai - WhatsApp Banner 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+        }
+        .banner {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .whatsapp-accent {
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37, 211, 102, 0.2) 0%, transparent 70%);
+            filter: blur(80px);
+        }
+        .grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, rgba(37, 211, 102, 0.02) 0px, transparent 1px, transparent 50px, rgba(37, 211, 102, 0.02) 51px),
+                repeating-linear-gradient(90deg, rgba(37, 211, 102, 0.02) 0px, transparent 1px, transparent 50px, rgba(37, 211, 102, 0.02) 51px);
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 70px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .whatsapp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 32px;
+            background: rgba(37, 211, 102, 0.15);
+            border: 2px solid rgba(37, 211, 102, 0.4);
+            border-radius: 50px;
+            margin-bottom: 40px;
+            width: fit-content;
+        }
+        .whatsapp-icon {
+            width: 36px;
+            height: 36px;
+            color: #25d366;
+        }
+        .badge-text {
+            font-size: 26px;
+            color: #25d366;
+            font-weight: 700;
+        }
+        .logo {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+        .main-title {
+            font-size: 68px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        .highlight {
+            color: #25d366;
+        }
+        .subtitle {
+            font-size: 32px;
+            color: #cbd5e1;
+            line-height: 1.4;
+            margin-bottom: 50px;
+        }
+        .offer-box {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(59, 130, 246, 0.1));
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+        .offer-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #25d366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .offer-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .offer-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 26px;
+            color: white;
+            font-weight: 600;
+        }
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            color: #25d366;
+            flex-shrink: 0;
+        }
+        .cta-section {
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+        }
+        .cta-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 28px 48px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 16px;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
+        }
+        .whatsapp-button svg {
+            width: 36px;
+            height: 36px;
+        }
+        .phone-number {
+            font-size: 32px;
+            color: #25d366;
+            font-weight: 700;
+        }
+        .urgency {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            border-radius: 50px;
+            font-size: 22px;
+            color: #fca5a5;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="whatsapp-accent"></div>
+        <div class="grid-pattern"></div>
+
+        <div class="content">
+            <div>
+                <div class="whatsapp-badge">
+                    <svg class="whatsapp-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span class="badge-text">Пишите в WhatsApp</span>
+                </div>
+
+                <div class="logo">MDTechnology.ai</div>
+
+                <h1 class="main-title">
+                    Увеличьте продажи<br/>
+                    <span class="highlight">на 300%</span> с AI!
+                </h1>
+
+                <p class="subtitle">
+                    Автоматизируем ваш бизнес с помощью искусственного интеллекта
+                </p>
+
+                <div class="offer-box">
+                    <div class="offer-title">✨ Специальное предложение</div>
+                    <div class="offer-items">
+                        <div class="offer-item">
+                            <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Бесплатный аудит вашего бизнеса</span>
+                        </div>
+                        <div class="offer-item">
+                            <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Рабочий прототип за 3 дня</span>
+                        </div>
+                        <div class="offer-item">
+                            <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Скидка 25% первым 5 клиентам</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Напишите нам прямо сейчас!</div>
+
+                <div class="whatsapp-button">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span>Открыть чат</span>
+                </div>
+
+                <div class="phone-number">+7 (705) 623-59-22</div>
+
+                <div class="urgency">🔥 Только 3 места осталось</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
