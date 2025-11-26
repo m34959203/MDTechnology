@@ -801,23 +801,24 @@ export default function Home() {
       {/* Social Proof */}
       <section className="py-20 px-4 relative">
         <div className="container mx-auto max-w-4xl">
-          <Card className="relative overflow-hidden bg-gradient-to-br from-blue-900/80 to-purple-900/80 backdrop-blur-xl border-blue-500/50 shadow-2xl">
+          <Card className="relative overflow-hidden bg-slate-900/95 backdrop-blur border-slate-700 hover:border-blue-500/50 transition-all duration-300 group">
+            <Spotlight className="from-blue-600/40 via-purple-600/40 to-pink-600/40" size={250} />
             <div className="p-12 text-center relative z-10">
-              <Sparkles className="w-12 h-12 text-yellow-400 mx-auto mb-6 drop-shadow-glow" />
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
+              <Sparkles className="w-12 h-12 text-yellow-400 mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Начните цифровую трансформацию уже сегодня
               </h2>
-              <p className="text-xl text-slate-100 mb-8 font-medium drop-shadow-md">
+              <p className="text-xl text-neutral-300 mb-8 font-medium">
                 Не упустите конкурентное преимущество. Первые 5 клиентов получают скидку 25%
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <span className="px-6 py-2 bg-green-600/30 border-2 border-green-400/70 rounded-full text-green-100 font-bold shadow-lg backdrop-blur-sm">
+                <span className="px-6 py-2 bg-green-600/20 border border-green-500/30 rounded-full text-green-300 font-bold">
                   ✓ Бесплатный аудит
                 </span>
-                <span className="px-6 py-2 bg-blue-600/30 border-2 border-blue-400/70 rounded-full text-blue-100 font-bold shadow-lg backdrop-blur-sm">
+                <span className="px-6 py-2 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 font-bold">
                   ✓ Прототип за 3 дня
                 </span>
-                <span className="px-6 py-2 bg-purple-600/30 border-2 border-purple-400/70 rounded-full text-purple-100 font-bold shadow-lg backdrop-blur-sm">
+                <span className="px-6 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 font-bold">
                   ✓ Гарантия результата
                 </span>
               </div>
