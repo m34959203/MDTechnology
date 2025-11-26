@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDTechnology.ai - Instagram Banner 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+        }
+        .banner {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 50px, rgba(255,255,255,0.02) 51px),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 50px, rgba(255,255,255,0.02) 51px);
+        }
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 20%, #0f172a);
+            opacity: 0.8;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 28px;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.2), rgba(147, 51, 234, 0.2));
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50px;
+            margin-bottom: 40px;
+            width: fit-content;
+        }
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            color: #60a5fa;
+        }
+        .badge-text {
+            font-size: 22px;
+            color: #93c5fd;
+            font-weight: 600;
+        }
+        .main-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        .subtitle {
+            font-size: 32px;
+            color: #cbd5e1;
+            line-height: 1.4;
+            margin-bottom: 50px;
+            max-width: 800px;
+        }
+        .features {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            color: #34d399;
+        }
+        .feature-text {
+            font-size: 22px;
+            color: white;
+            font-weight: 600;
+        }
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 24px 48px;
+            background: linear-gradient(to right, #2563eb, #9333ea);
+            border-radius: 16px;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            width: fit-content;
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.4);
+        }
+        .contact {
+            font-size: 26px;
+            color: #94a3b8;
+            margin-top: 30px;
+            font-weight: 600;
+        }
+        .contact-highlight {
+            color: #60a5fa;
+            font-weight: 700;
+        }
+        .spotlight {
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.3) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="grid-pattern"></div>
+        <div class="gradient-overlay"></div>
+        <div class="spotlight"></div>
+
+        <div class="content">
+            <div>
+                <div class="logo">MDTechnology.ai</div>
+
+                <div class="badge">
+                    <svg class="badge-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    <span class="badge-text">Технологии будущего</span>
+                </div>
+
+                <h1 class="main-title">AI-решения<br/>для вашего бизнеса</h1>
+
+                <p class="subtitle">Превратите свой бизнес в технологического лидера с помощью искусственного интеллекта</p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="feature-text">Запуск за 2-4 недели</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="feature-text">Рост продаж до 300%</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="feature-text">Поддержка 24/7</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="cta">
+                    <span>Получить консультацию</span>
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+
+                <div class="contact">
+                    📱 WhatsApp: <span class="contact-highlight">+7 (705) 623-59-22</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
