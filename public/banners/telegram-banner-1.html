@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDTechnology - Telegram Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+        }
+        .banner {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 50px, rgba(255,255,255,0.02) 51px),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 50px, rgba(255,255,255,0.02) 51px);
+        }
+        .telegram-glow {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 136, 204, 0.4) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        .telegram-glow-2 {
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite 2s;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .telegram-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 28px;
+            background: rgba(0, 136, 204, 0.2);
+            border: 2px solid rgba(0, 136, 204, 0.4);
+            border-radius: 50px;
+        }
+        .telegram-icon {
+            width: 32px;
+            height: 32px;
+            color: #0088cc;
+        }
+        .telegram-text {
+            font-size: 20px;
+            color: #0088cc;
+            font-weight: 700;
+        }
+        .main-content {
+            text-align: center;
+        }
+        .main-title {
+            font-size: 68px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        .title-highlight {
+            background: linear-gradient(to right, #0088cc, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 28px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 28px;
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(0, 136, 204, 0.3);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            color: #34d399;
+        }
+        .feature-text {
+            font-size: 22px;
+            color: white;
+            font-weight: 600;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 24px 48px;
+            background: linear-gradient(to right, #0088cc, #60a5fa);
+            border-radius: 16px;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 20px 50px rgba(0, 136, 204, 0.4);
+        }
+        .channel-info {
+            text-align: right;
+        }
+        .channel-name {
+            font-size: 32px;
+            color: #0088cc;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .channel-desc {
+            font-size: 20px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="grid-pattern"></div>
+        <div class="telegram-glow"></div>
+        <div class="telegram-glow-2"></div>
+
+        <div class="content">
+            <div class="header">
+                <div class="logo">MDTechnology.ai</div>
+                <div class="telegram-badge">
+                    <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.015-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.912.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.12.098.153.228.166.331.014.103.03.336.017.519z"/>
+                    </svg>
+                    <span class="telegram-text">Telegram</span>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <h1 class="main-title">
+                    Подписывайтесь на<br/>
+                    <span class="title-highlight">наш канал!</span>
+                </h1>
+
+                <p class="subtitle">
+                    Кейсы внедрения AI, полезные инструменты,<br/>
+                    советы по автоматизации бизнеса
+                </p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="feature-text">Разборы AI-инструментов</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="feature-text">Реальные кейсы</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="feature-text">Бесплатные консультации</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="cta">
+                    <span>Подписаться</span>
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="channel-info">
+                    <div class="channel-name">@mdtechnology_kz</div>
+                    <div class="channel-desc">AI для бизнеса</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
