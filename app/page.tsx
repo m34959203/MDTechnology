@@ -40,7 +40,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
         <div className="container mx-auto px-4 z-10">
-          <Card className="w-full min-h-[600px] bg-black/[0.96] relative overflow-hidden border-slate-800">
+          <Card className="w-full min-h-[700px] bg-black/[0.96] relative overflow-hidden border-slate-800">
             <SpotlightAceternity
               className="-top-40 left-0 md:left-60 md:-top-20"
               fill="white"
@@ -48,7 +48,7 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row h-full">
               {/* Left content */}
-              <div className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center">
+              <div className="md:w-[40%] p-8 md:p-12 relative z-10 flex flex-col justify-center">
                 <div className="mb-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 w-fit">
                   <Sparkles className="w-4 h-4 text-blue-400" />
                   <span className="text-sm text-blue-300">Технологии будущего уже здесь</span>
@@ -87,7 +87,7 @@ export default function Home() {
               </div>
 
               {/* Right content - 3D Scene */}
-              <div className="flex-1 relative min-h-[400px] md:min-h-0">
+              <div className="md:w-[60%] relative min-h-[500px] md:min-h-[600px]">
                 <SplineScene
                   scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                   className="w-full h-full"
