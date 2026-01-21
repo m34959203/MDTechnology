@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "^15.5.9",
+    "next": "^15",
     "@splinetool/runtime": "^1.9.51",
     "@splinetool/react-spline": "^4.0.0",
     "framer-motion": "^11.11.11",
